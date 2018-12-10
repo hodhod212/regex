@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Canvas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin:0;padding-top: 0px; height: 0;">
+  <h1 style="display:inline;margin-right: 700px">Canvas</h1>
+  <h3 style="display: inline;color: rgb(178, 32, 171)"><a href="http://ehandel2.se/" target="_blank"><i>ehandel2.se</i></a> </h3>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#" style="visibility:hidden">navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="display:none">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="display:none">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"style="display:none" >Link</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Källa:</h2>     
+    <p>1. HTML5 Canvas Tutorial for Beginners(youtube)  från:Chris Courses</p>
+      <a href="https://www.youtube.com/watch?v=EO6OkltgudE&list=PLpPnRKq7eNW3We9VdCfx9fprhqXHwTPXL">
+        HTML5 Canvas Tutorial for Beginners(youtube)  från:Chris Courses</a><br><br>
+        <p>2.HTML5 Canvas Tutorials</p>
+      <a href="https://www.html5canvastutorials.com/">
+       Canvas Tutorial </a><br><br>
+      <p>3. HTML5 Canvas Tutorial</p>
+      <a href="https://billmill.org/static/canvastutorial/">
+        HTML5 Canvas Tutorial  från:Bill Mill</a>
+      <h3></h3>
+      <p></p>
+      <ul class="nav nav-pills flex-column" style="display:none">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" >Disabled</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      <h2 style="color:rgb(41, 68, 95)">Canvas för nybörjare</h2><br>
+      <h5>Från Ali Ezadkhaha Okt 21, 2018</h5>
+      <div class="fakeimg" style="display:none"></div>
+      <p></p>
+      <p>Det första vi behöver göra är att skapa en exempel av
+         &#60;canvas&#62; elementet, så att vi kan börja dra på det.
+            Om du tittar i källan till en canvas sida, ser du en deklaration som ser ut så här:<br>
+            <b>&#60;canvas id="canvas" width="300" height="300"&#62; &#60;/canvas&#62;</b><br>
+            Denna deklaration skapar en duk som vi kallar canvas.<br>
+            Nu när vi har en canvas att dra på, låt oss göra så:<br>
+           <code>var canvas = document.querySelector('canvas');<br>
+              canvas.width = window.innerWidth;<br>
+              canvas.height = window.innerHeight;<br>
+              var c = canvas.getContext('2d');<br>
+
+              c.beginPath();<br>
+              c.arc(80, 80, 30, 0, Math.PI*2, false);<br>
+              c.strokeStyle = "red";<br>
+              c.stroke();<br>
+              
+              c.beginPath();<br>
+              c.arc(180, 80, 30, 0, Math.PI*2, false);<br>
+              c.fillStyle = "red";<br>
+              c.fill();<br></code>
+            <img src="circle.png" ><br>           
+            ctx är canvas context since. ctx är en abreviation av kontext.
+            I nya versioner av canvas skriver man bara c.<br>
+            För att skapa en båge med HTML5 Canvas kan vi använda metoden arc ().
+            Arcs definieras av en mittpunkt, en radie, en startvinkel, en ändvinkel och 
+            ritningsriktningen (antingen medurs eller moturs). Bågar kan stylas med egenskaperna 
+            lineWidth, strokeStyle och lineCap.<br>
+            Alternativet <code>fillStyle();</code> är en egenskap, vanligtvis en sträng, 
+            som används för att ställa in den färg som används för att fylla på canvas. 
+            ... I likhet med en sträng kan det vara en linjär eller radial gradient i canvas.
+            För att fylla en HTML5 Canvas-form med en fast färg kan vi ställa 
+            in fillStyle-egenskapen till en färgsträng som blått, ett hex-värde som 
+            <code>#0000FF</code> eller ett RGB-värde som <code>rgba(red, green, blue, alfa)</code> och då kan vi 
+            använda <code>fill();</code> -metoden för att fylla formen.<br>
+            Vi can göra rektangel genom att byta <code>arc</code> till <code>rect</code>:
+           &nbsp;<code> c.rect(300,300,300,300);</code></p>
+          <a href="canvas1.html" target="_blank">Canvas linje, cirkel och rektangel</a>
+          <p><br>
+            Vi har redan gjort en boll, nu låt oss få det att flytta. För att göra det skapar vi en 
+            <code>draw();</code> -funktion som torkar skärmen, drar bollen och uppdaterar nu sin nuvarande 
+            position. Vi gör ett call till <code>setInterval(funktion, timeout)</code> i <code>init();</code> 
+            -funktionen för att berätta för webbläsaren att köra vår teckningsfunktion var 10:e 
+            millisekunder, vilket ger en illusion av rörelse.</p>
+            <code>var c = canvas.getContext('2d');<br>
+                var x =150;<br>
+                var y =150;  <br>  
+                var dx=2;<br>
+                var dy=2;<br>
+                var c;<br>
+                function init(){<br>
+                    c = canvas.getContext("2d");<br>
+                    return setInterval(draw,10);<br>
+                }<br>
+                function draw(){<br>
+                    c.clearRect(0,0,300,300);<br>
+                    c.beginPath();<br>
+                    c.arc(x, y, 30, 0, Math.PI*2, true);<br>
+                    c.strokeStyle = "black";<br>
+                    c.stroke();<br>
+                    c.fillStyle = "yellow";<br>
+                    c.fill();<br>
+                    x +=dx;<br>
+                    y +=dy;<br>
+                }<br>
+                init();</code><br>
+            <a href="canvas2.html" target="_blank">Canvas cirkel flyttar på sig</a>
+      <br><br>
+      <p>Försök ändra dx- och dy-värdena för att ändra riktningen av bollen, eller ändra x- 
+        och y-variablerna för att ändra var bollen börjar. Se till att du försöker negativa 
+        värden för dx och dy. <br>   Vår boll kan flyga, men den går för fort; låt oss 
+        innehålla den i lådan genom att studsa tilbaka från väggarna. <br>
+        <code>if(x+dx>w||x+dx&#60;0)<br>
+          dx=-dx;<br>
+          if(y+dy>h||y+dy&#60;0)<br>
+          dy=-dy;</code>  <br>
+      </p>
+      <a href="canvas3.html" target="_blank">Bollen studsar tillbaka från kanterna</a><br>
+      <a href="canvas4.html" target="_blank">En rektangel som rör på sig</a><br>
+           <a href="canvas5.html" target="_blank">Färjade bollar</a>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="margin:0;height: 10px;padding-top: 2px;border: 0">
+  &copy; Copyright
+  2018. All Rights Reserved. <br><a href="mailto:
+  hodhod212@yahoo.com">hodhod212@yahoo.com</a>
+</div>
+
+</body>
+</html>
